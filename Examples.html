@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+	<head>
+		<title>Open Sourced Panorama using Three.js</title>
+		<meta name="keywords" content="michaelphan, michael, phan, interactive, developer, webgl, threejs, panorama, streetview, secretlocation, secret, location, michaeldphan, phanmichael" />
+
+		
+		<!--
+		//***********Custom code used in this site is Written & owned by Michael Phan********************************\\
+		//THIS EXAMPLE CLASS USES AN IMAGE PROXY TO GET GOOGLE MAPS AND OTHER IMAGES FROM THE WEB
+		 -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/lib/equalizer.css">
+        <!-- this is needed for google maps -->
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDtmprYmbgyyFPP-B8cVZlwun1QvGn9su4&libraries=places&sensor=false&language=en"></script>
+		<script src="js/Global.js"></script>
+		<script src="js/lib/jquery.min.js"></script>
+		<script src="js/lib/three.min.js"></script>
+		<script src="js/lib/tweenmax/TweenMax.min.js"></script>
+		<script src="js/lib/modernizr.custom.05848.js"></script>
+		<script src="js/lib/selo_maps.js"></script>
+		<script src="js/page/Examples/Objects/GMapsPanorama.js"></script>
+		<script src="js/page/HTML5Pano/Controls/ExplorationControls.js"></script>
+		<script src="js/page/HTML5Pano/Controls/HTML5Pano.js"></script>
+		<script type = "text/javascript">
+			$(document).ready(function(){
+
+				function beginLife (){
+					$("#preloader").css("display","block");
+					//setting the offsetX
+					Global.viewportOffsetX = $("#masterContainer").offset().left;
+					//setting the offsetY
+					Global.viewportOffsetY =$("#masterContainer").offset().top;
+					$(window).resize(function(e){
+						//setting the offsetX
+						Global.viewportOffsetX = $("#masterContainer").offset().left;
+						//setting the offsetY
+						Global.viewportOffsetY =$("#masterContainer").offset().top;
+						Global.viewportWidth = $("#backgroundLayer").width();
+						Global.viewportHeight = $("#backgroundLayer").height();
+
+						HTML5Pano.resize();
+					})
+
+					selo_maps.init();
+					ExplorationControls.init();	
+					HTML5Pano.init("masterContainer");
+					GMapsPanorama.init();
+
+					//depending on Tweenmax's request animation frame
+					TweenMax.ticker.addEventListener('tick', function(){
+						HTML5Pano.render();
+						// InteractionObjects.render();
+					});
+				}
+
+
+
+				beginLife();
+
+				Global.fps = {
+					stats:null,
+					begin:function(){
+						var self = this;
+
+						self.stats = new Stats();
+						self.stats.domElement.style.position = 'absolute';
+						self.stats.domElement.style.left = '0px';
+						self.stats.domElement.style.top = '0px';
+						$('body').append(self.stats.domElement);
+						setInterval( function () {
+
+						    self.stats.begin();
+
+						    // your code goes here
+
+						    self.stats.end();
+
+						}, 1000 / 60 );
+					}
+				}
+
+
+				$("#image-input").on('change',function(){
+					$("#image-input-filename").html($("#image-input").val().substr($("#image-input").val().lastIndexOf("\\")+1));
+					Global.fileList = $("#image-input")[0].files;
+				});
+
+				$("#google-input").on("keydown",function(e){
+					if(e.keyCode == 13){
+						GMapsPanorama.loadPanoByAddress($("#google-input").val(), function(){
+							$("#disabler").css('display',"none");
+						});
+					} 
+				});
+
+				$("#panoramaURL-input").on("keydown",function(e){
+					if(e.keyCode == 13){
+						$("#disabler").css('display',"block");
+						console.log("GETU",selo_maps.imageProxy+$("#panoramaURL-input").val());
+						$.ajax({
+							type:"HEAD",
+							url:selo_maps.imageProxy+$("#panoramaURL-input").val(),
+							success:function(e){
+								console.log("loading in image!");
+
+								var newImage = new Image();
+
+								newImage.onload = function(){
+									var newCanv = document.createElement('canvas');
+									newCanv.width = newImage.width;
+									newCanv.height = newImage.height;
+									var ctx = newCanv.getContext('2d');
+									ctx.drawImage(newImage, 0,0, newImage.width, newImage.height);
+									HTML5Pano.loadTexture(newCanv.toDataURL());
+									HTML5Pano.changeFov(selo_maps.panProps.fov)
+									$("#disabler").css('display',"none");
+								}
+								newImage.onerror = function(){
+									console.log("ERRUR")
+									$("#disabler").css('display',"none");
+								};
+								newImage.src = selo_maps.imageProxy+$("#panoramaURL-input").val();
+							}, error:function(){
+
+								$("#disabler").css('display',"none");
+							}
+						});
+					} 
+				});
+
+
+
+				$("#google-input-submit").on("click",function(e){
+						$("#disabler").css('display',"block");
+						GMapsPanorama.loadPanoByAddress($("#google-input").val(), function(){
+							$("#disabler").css('display',"none");
+						});
+				});
+
+				$("#panoramaURL-input-submit").on("click",function(e){
+						$("#disabler").css('display',"block");
+						console.log("GETU",selo_maps.imageProxy+$("#panoramaURL-input").val());
+						$.ajax({
+							type:"HEAD",
+							url:selo_maps.imageProxy+$("#panoramaURL-input").val(),
+							success:function(e){
+								console.log("loading in image!");
+
+								var newImage = new Image();
+
+								newImage.onload = function(){
+									var newCanv = document.createElement('canvas');
+									newCanv.width = newImage.width;
+									newCanv.height = newImage.height;
+									var ctx = newCanv.getContext('2d');
+									ctx.drawImage(newImage, 0,0, newImage.width, newImage.height);
+									HTML5Pano.loadTexture(newCanv.toDataURL());
+									HTML5Pano.changeFov(selo_maps.panProps.fov)
+									$("#disabler").css('display',"none");
+								}
+								newImage.onerror = function(){
+									console.log("ERRUR")
+									$("#disabler").css('display',"none");
+								};
+								newImage.src = selo_maps.imageProxy+$("#panoramaURL-input").val();
+							}, error:function(){
+
+								$("#disabler").css('display',"none");
+							}
+						});
+				});
+				$("#image-input-submit").on('click',function(e){
+					if(Global.fileList) {
+						var reader = new FileReader();
+
+						// Closure to capture the file information.
+						reader.onload = (function(theFile) {
+							console.log("DA FILE",theFile);
+							HTML5Pano.loadTexture(theFile.target.result);
+						});
+
+						// Read in the image file as a data URL.
+						reader.readAsDataURL(Global.fileList[0]);
+					}
+					
+				});
+
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id = "disabler">
+
+		</div>
+		<div id = "inputsContainer">
+			<div class = 'row'>
+				<div class = "imageInputs">
+					<div class = "rowTitle">
+						Google Maps Image
+					</div>
+					<input id = 'google-input'/>
+					<input id = 'google-input-submit' class = 'submitBtn' type = "submit"/>
+				</div>
+				<div class = "imageInputs">
+					<div class = "rowTitle">
+						Image from Internet
+					</div>
+					<input id = 'panoramaURL-input'/>
+					<input id = 'panoramaURL-input-submit'  class = 'submitBtn' type = "submit"/>
+				</div>
+				<div class = "imageInputs">
+					<div class = "rowTitle">
+						Custom Image
+					</div>
+					<input type="file" id = 'image-input' text="CHOOSURU"/>
+					<div id = "image-input-filename">No File Chosen</div>
+					<input type="submit" class = 'submitBtn' id = 'image-input-submit' text="CHOOSURU"/>
+				</div>
+			</div>
+		</div>
+		<div id = "masterContainer">
+			<div id = "worldContainers"></div>
+		</div>
+
+		
+	</body>
+
+</html>

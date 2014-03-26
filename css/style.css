@@ -1,0 +1,63 @@
+
+body{
+	background: black;
+}
+#masterContainer{
+	position: absolute;
+    margin:auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+    /*width: 90%;
+    height: 90%;*/
+    width: 90%;
+    height: 70%;
+    max-height:576px;
+    max-width:1400px;
+	display: inline-block;
+	/*opacity: 0;*/
+	/*overflow-x: hidden;*/
+}
+
+#worldContainer{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.imageInputs{
+	float:left;
+	padding-left: 100px;
+	:first{
+		padding-left:0;
+	};
+}
+.imageInputs #image-input-filename{
+	color: grey;
+	float: left;
+}
+.imageInputs #image-input{
+	float:left;
+	width:40%;
+}
+
+
+#inputsContainer{
+	z-index: 99;
+}
+
+.row{
+	width: 100%;
+	height: 20px;
+}
+
+.rowTitle{
+	color: white;
+}
+
+#disabler{
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: rgba(0,0,0,.5);
+	position: absolute;
+}

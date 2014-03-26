@@ -1,0 +1,10 @@
+[
+    "src/js/core/Class.js",
+    "src/js/core/PageCore.js",
+
+
+    "src/js/Global.js",
+    "src/js/Home.js",
+    "src/js/ExplorationControls.js",
+    "src/js/page/Page.js"
+]

@@ -1,0 +1,232 @@
+{
+
+	"portfolio_sect2014":{
+		"itemID":"portfolio_sect2014",
+		"x":-468,
+		"y":-130,
+		"z":970,
+		"originalScale":0.5,
+		"popupContent":{
+			"dir":"y",
+			"imgUrl":"asset/image/sect_02/sect2_combined.svg",
+			"items":[
+					{	
+						"project":"phanmichael.com",
+						"tar":1,
+						"overPos":[-10,5],
+						"role":"Person Guy",
+						"description":"You're already here!",
+						"webURL":"http://phanmichael.com"
+					},
+					{	
+						"project":"Some Assembly Required",
+						"tar":2,
+						"overPos":[-10,5],
+						"role":"Tech Lead and developer",
+						"description":"A site about the new YTV Series 'Some Assembly Required' where users can find out more about the show and mash together clips from the show in a unique mash-up tool, allowing users to create and submit custom stories and situations",
+						"webURL":"http://www.someassemblyrequired.ytv.com"
+					},
+					{	
+						"project":"The Next Step Interactive Season 2",
+						"tar":3,
+						"overPos":[-10,5],
+						"role":"Lead Developer of the Mashup section",
+						"description":"A Canadian Screens Awards winner, on this site the users mix up different characters with different songs to create a unique mashup of dancers from the Next Step show in this interactive experience. Each mashup is stitched together and weaved into one video along with the song client-side.",
+						"webURL":"http://www.family.ca/the-next-step/#mashup"
+					},
+					{	
+						"project":"Junos Tribute Nation",
+						"tar":4,
+						"overPos":[-10,5],
+						"role":"Developer",
+						"description":"In honour of Bachman-Turner's indictment into the Canadian Music Hall of Fame, users are encouraged to submit a dance/karaoke/pre-recorded tribute to the song Taking Care of Business. Winners are then selected to be aired live on national television",
+						"webURL":"http://www.junotribute.ca"
+					}
+			]
+		}
+
+	},
+	"portfolio_sect2013":{
+		"itemID":"portfolio_sect2013",
+		"x":-824,
+		"y":-150,
+		"z":690,
+		"originalScale":0.5,
+		"popupContent":{
+			"dir":"x",
+			"imgUrl":"asset/image/sect_01/sect1_combined.svg",
+			"items":[
+				{	
+					"project":"The Spoils of Babylon",
+					"tar":1,
+					"overPos":[10,10],
+					"role":"Tech Lead and development support",
+					"description":"A gorgeous endless site where people can go and find updates on IFC's Spoils of Babylon show. The first of its kind to pull in tumblr blogs and integrate them in an interactive experience",
+					"webURL":"http://www.ifc.com/the-spoils-of-babylon/"
+				},
+				{	
+					"project":"Are you on the Blacklist?",
+					"tar":2,
+					"overPos":[10,10],
+					"role":"Lead Developer",
+					"description":"A digital piece for the NBC Prime time show, in which the user connects through facebook to interact with a uniquely custom experience.",
+					"webURL":"http://areyouontheblacklist.com"
+				},
+				{	
+					"project":"Perfect Storms Interactive",
+					"tar":3,
+					"overPos":[10,10],
+					"role":"Development of Storm in Your Town promo, initial prototypes, and Earthquak Interaction in the Tokyo scene",
+					"description":"A digital extension to the Perfect Storms history series, which allows users to re-create three of history's greatest disasters using using a mix of photorealistic CG, fluid interaction points, and vivid design",
+					"webURL":"http://perfectstorms.history.ca/#experience"
+				},
+				{	
+					"project":"Grojband - The Show Must Go On!",
+					"tar":4,
+					"overPos":[10,10],
+					"role":"Development and support of 3 games",
+					"description":"A miniature game portal in which users can play 3 Unity built games. The games are linked into an overall progression in which the users unlock cool items and create a 'Wicked Cool Transition' to submit and get a chance to meet the creator's of the show.",
+					"webURL":"http://www.grojband.com/en/?p=games#games"
+				}
+
+			]
+		}
+
+	},
+	"portfolio_sect2012":{
+		"itemID":"portfolio_sect2012",
+		"x":-885,
+		"y":-540,
+		"z":710,
+		"originalScale":0.5,
+		"popupContent":{
+			"dir":"y",
+			"imgUrl":"asset/image/sect_04/sect4_combined.svg",
+			"items":[
+				{	
+					"project":"DDay to Victory",
+					"tar":1,
+					"overPos":[-5,10],
+					"description":"An interactive, story-driven online documentary featuring World War II veterans, created in commemoration of Remembrance day in collaboration with the History Channel and their television series to honour our Veterans.",
+					"role":"Lead Developer",
+					"webURL":"http://areyouontheblacklist.com"
+				},
+				{	
+					"project":"What are the Sevens?",
+					"tar":2,
+					"overPos":[-5,25],
+					"description":"An interactive film for the Secret Location site. Users solve a series of simple puzzles and call into the number on the site for a spine chilling experience.",
+					"role":"Developer",
+					"webURL":"http://www.thesecretlocation.com/#interactive"
+				},
+				{	
+					"project":"Endgame Interactive",
+					"tar":3,
+					"overPos":[-5,10],
+					"description":"An interactive, Emmy winning webisode in which the user is engaged via Facebook to solve the mystery of their missing friend.",
+					"role":"Developer",
+					"webURL":"http://endgame.thesecretlocation.com/"
+				},
+				{	
+					"project":"Bomb Girls",
+					"tar":4,
+					"overPos":[5,10],
+					"description":"An HTML5 site which users scroll through a World War II Era atmosphere and learn more about the life of five women working in Canadian Munitions factories",
+					"role":"Developer",
+					"webURL":"http://www.globaltv.com/bombgirls/index.html"
+				}
+
+			]
+		}
+
+	},
+	"portfolio_sect2011":{
+		"itemID":"portfolio_sect2011",
+		"x":-654,
+		"y":-773,
+		"z":830,
+		"originalScale":0.5,
+		"popupContent":{
+			"dir":"y",
+			"imgUrl":"asset/image/sect_03/sect3_combined.svg",
+			"items":[
+				{	
+					"project":"Storming Juno",
+					"tar":1,
+					"overPos":[10,10],
+					"description":"Dropped into the battle of Normandy as Canadian troops storm Juno beach, users are greeted with the attack frozen in time. Exploring the site leads to further stories by real veterans who recall the operation.",
+					"role":"Developer",
+					"webURL":"http://stormingjuno.com"
+				},
+				{	
+					"project":"In Real Life Interactive",
+					"tar":2,
+					"overPos":[10,10],
+					"description":"A 3D Platformer where kids can customize an avatar online, and play through a series of user and non-user generated courses, racing from the one point to the end.",
+					"role":"3D Avatar Creation & Customization",
+					"webURL":"http://work.thesecretlocation.com/IRLI/season2/index.php#/home/"
+				},
+				{	
+					"project":"The Guy At Home in His Underwear",
+					"tar":3,
+					"overPos":[20,15],
+					"description":"An online initiative for testicular cancer awareness. Following the life of Mark as he stays home along in a loft for 25 days while streams are hooked up around his living space.",
+					"role":"Streaming consultant and partial stream development",
+					"webURL":"http://www.thesecretlocation.com/projects/stanfields-the-guy-at-home-in-his-underwear"
+				}
+
+			]
+		}
+
+	},
+	"about":{
+		"itemID":"about",
+		"x":1180,
+		"y":-100,
+		"z":850,
+		"originalScale":0.5,
+		"popupContent":{
+			"imgUrl":"asset/image/about.png",
+			"items":[
+			]
+		}
+	},
+	"contact":{
+		"itemID":"contact",
+		"x":170,
+		"y":210,
+		"z":140,
+		"originalScale":0.1,
+		"upScale":3,
+		"popupContent":{
+			"imgUrl":"asset/image/contact_me.svg",
+			"items":[
+			]
+		}
+
+	},
+	"post-its":{
+		"itemID":"post-its",
+		"x":300,
+		"y":20,
+		"z":-240,
+		"originalScale":0.15,
+		"popupContent":{
+			"imgUrl":"asset/image/PostIts.png",
+			"items":[
+			]
+		}
+	},
+	"social":{
+		"itemID":"social",
+		"x":-230,
+		"y":-90,
+		"z":-290,
+		"originalScale":0.15,
+		"popupContent":{
+			"imgUrl":"asset/image/Twitter_lightbox.png",
+			"items":[
+			]
+		}
+	}
+}
