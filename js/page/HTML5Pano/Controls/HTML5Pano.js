@@ -4,6 +4,7 @@ var HTML5Pano = {
 	container:null,
 	camera:null,
 	domElement:null,
+	layerImage:null,
 	layers:[
 		{
 			config:{
@@ -12,9 +13,9 @@ var HTML5Pano = {
 				cameraSettings:{aspect:window.innerWidth/window.innerHeight, near:0.1, far:1000},
 				rendererType:Modernizr.webgl?'WebGLRenderer':'CanvasRenderer',
 				rendererSettings:{alpha:false},
-				layerImage:['asset/image/pano_bg.jpg'
-							// ,'asset/image/pano_bg_mid.png'
-							],
+				// layerImage:['asset/image/pano_bg.jpg'
+				// 			// ,'asset/image/pano_bg_mid.png'
+				// 			],
 				defaultRotation:{x:0.02,y:3.45},
 				geometrySettings:{widthSegments:50,heightSegments:50,radius:1500}
 			},
@@ -37,6 +38,8 @@ var HTML5Pano = {
 		Number.prototype.clamp = function(min, max) {
 		  return Math.min(Math.max(this, min), max);
 		};
+
+
 	},
 
 	buildHandlers:function(){
@@ -86,11 +89,11 @@ var HTML5Pano = {
 
 			$(item.renderer.domElement).attr('id', item.config.id);
 			//load in the texture and setup the world
-			for(var textureIndex in item.config.layerImage) {
 				// console.log("A",textureIndex)
-				self.loadTexture(item.config.layerImage[textureIndex]);
-			}
+				if(self.layerImage) self.loadTexture(layerImage);
 		});
+
+		self.render();
 	},
 
 	loadTexture:function(__imgURL){
@@ -124,7 +127,6 @@ var HTML5Pano = {
 			self.allReady = true;
 			self.resize();
 		} );
-
 	},
 
 	changeFov:function(__tarFov){
@@ -137,6 +139,8 @@ var HTML5Pano = {
 			item.camera.updateProjectionMatrix()
 		});
 	},
+
+
 	
 	render:function(){
 		var self = this;
@@ -147,6 +151,9 @@ var HTML5Pano = {
 				item.renderer.render(item.scene,item.camera);
 			}
 		});
+// 
+		window.requestAnimationFrame( self.render );
+ 
 	},
 
 	resize:function(){
