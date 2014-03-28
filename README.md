@@ -16,7 +16,7 @@ THREE.JS is needed and included in the package.zip.
     *	Image to load in should be a valid URL or image dataURI
 4.	Call HTML5Pano.resize() when you need to resize, it will always be 100% of the container
 
-EXPOSED VARIABLES/FUNCTIONS
+##EXPOSED VARIABLES/FUNCTIONS
 
 ###.camera
 >Control the three.js camera object, reference [three.js](http://threejs.org/docs/#Reference/Cameras/Camera) camera for further details, may need to play around with the <b>position.y</b> if image is weirdly warped
