@@ -9,12 +9,13 @@ THREE.JS is needed and included in the package.zip.
 
 ##HOW TO USE:
 
-1.    Include both the three.min.js package and HTML5Pano.js
+1.  Include both the three.min.js package and HTML5Pano.js
 2.	Initialize the pano with the ID of the container div via "HTML5Pano.init([container])"
     *   If no container is specifed, you can access the dom element via HTML5Pano.domElement
 3.	To load in a new world, simply call a valid image into HTML5Pano.loadTexture([img])
     *	Image to load in should be a valid URL or image dataURI
 4.	Call HTML5Pano.resize() when you need to resize, it will always be 100% of the container
+5.	To add simple controls, add 'ExplorationControls.js' and call ExplorationControls.init();
 
 ##EXPOSED VARIABLES/FUNCTIONS
 
